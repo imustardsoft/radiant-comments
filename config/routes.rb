@@ -1,9 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-<<<<<<< HEAD
-  # map.namespace :admin, :member => { :remove => :get } do |admin|
-  #   admin.resources :blog
-  # end
-=======
   map.namespace :admin do |admin|
     admin.connect 'comments/:status', :controller => 'comments', :status => 'unapproved', :conditions => { :method => :get }, :requirements => { :status => /all|unapproved|approved/ }
     admin.connect 'comments/:status.:format', :controller => 'comments', :status => /all|approved|unapproved/, :conditions => { :method => :get }
@@ -18,5 +13,4 @@ ActionController::Routing::Routes.draw do |map|
   end
   # This needs to be last, otherwise it hoses the admin routes.
   map.resources :comments, :name_prefix => "page_", :path_prefix => "*url", :controller => "comments"
->>>>>>> b701a0b8eeeeaee4206c1360b7e1cd87645c7da3
 end
