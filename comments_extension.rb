@@ -22,11 +22,14 @@ class CommentsExtension < Radiant::Extension
       admin.page.edit.add :parts_bottom, "edit_comments_enabled", :before => "edit_timestamp"
       admin.page.index.add :sitemap_head, "index_head_view_comments"
       admin.page.index.add :node, "index_view_comments"
+<<<<<<< HEAD
       # Add a checkbox for enable 'the directory of blog'
 		  admin.page.edit.add :parts_bottom, "edit_enable_blog_directory"
 		  # Add 'Post time' and 'Post user' in the index page
 		  admin.page.index.add :sitemap_head, "index_head_view_posted_time_user", :after => "title_column_header"
 		  admin.page.index.add :node, "index_view_posted_time_user", :after => "title_column"
+=======
+>>>>>>> b701a0b8eeeeaee4206c1360b7e1cd87645c7da3
     end
 
     tab "Content" do
@@ -61,6 +64,7 @@ class CommentsExtension < Radiant::Extension
         end
       end
     end
+<<<<<<< HEAD
 
     Admin::PagesController.class_eval do
       before_filter :filter_other_page, :only => [:edit]
@@ -107,6 +111,8 @@ class CommentsExtension < Radiant::Extension
       # Associations
       acts_as_tree :order => 'virtual DESC, created_at DESC'
     end
+=======
+>>>>>>> b701a0b8eeeeaee4206c1360b7e1cd87645c7da3
   end
 
   def deactivate
