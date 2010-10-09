@@ -22,9 +22,7 @@ class CommentsExtension < Radiant::Extension
       admin.page.edit.add :parts_bottom, "edit_comments_enabled", :before => "edit_timestamp"
       admin.page.index.add :sitemap_head, "index_head_view_comments"
       admin.page.index.add :node, "index_view_comments"
-      # Add a checkbox for enable 'the directory of blog'
 		  admin.page.edit.add :parts_bottom, "edit_enable_blog_directory"
-		  # Add 'Post time' and 'Post user' in the index page
 		  admin.page.index.add :sitemap_head, "index_head_view_posted_time_user", :after => "title_column_header"
 		  admin.page.index.add :node, "index_view_posted_time_user", :after => "title_column"
     end
