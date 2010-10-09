@@ -33,6 +33,12 @@ or if you want to clean up your initializer for the sanitize gem run:
 
   rake radiant:extensions:comments:forced_initialize
 
+== Setup
+
+1. Add a user with bloger role
+2. In Edit Page have a checkbox, ckeck it means the page is blog directory(Articles Page Generally), remember you should have only one directory
+3. Now the title in index page will display a 'Add New Blog' link, click it you can add blog article
+
 == More Help
 
 See the included HELP docs here or read them in your Radiant interface with the Help extension installed.
