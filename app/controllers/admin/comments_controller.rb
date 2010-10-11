@@ -1,4 +1,12 @@
 class Admin::CommentsController < ApplicationController
+  before_filter :filter_other_comment, :only => [:edit]
+
+  def filter_other_comment
+    if current_user.bloger && Page.find_by_id(Comment.find(params[:id]).page_id).created_by_id != current_user.id
+      redirect_to admin_comments_path
+      flash[:notice] = t 'You do not have permission to access, the request is denied'
+    end
+  end
 
   def index
     @comments = load_comments
